@@ -1,0 +1,27 @@
+---
+# tasks file for hadoop_tasktracker---
+- name: "Configuring mapred-site.xml file"
+  template:
+          src: "mapred-site.xml.j2"
+          dest: "/etc/hadoop/mapred-site.xml"
+          force: true
+- name: "Checking if Task Tracker service already running"
+  command: "jps"
+  ignore_errors: true
+  changed_when: false
+  register: hadoop_tasktracker_service_check
+- debug:
+        msg: "Hadoop Task Tracker Service Already running"
+  when: hadoop_tasktracker_service_check.stdout | regex_search('(TaskTracker)') == "TaskTracker" 
+- debug:
+        msg: "Hadoop Task Tracker Service not running"
+  when: hadoop_tasktracker_service_check.stdout | regex_search('(TaskTracker)') != "TaskTracker" 
+- name: "Starting Hadoop Task Tracker Service"
+  command: "hadoop-daemon.sh start tasktracker"
+  when: hadoop_tasktracker_service_check.stdout | regex_search('(TaskTracker)') != "TaskTracker" 
+- name: "Making Hadoop Task Tracker Service Permanent on reboot"
+  lineinfile:
+          line: "hadoop-daemon.sh start tasktracker"
+          state: present
+          path: "/etc/rc.d/rc.local"
+          mode: "0755"

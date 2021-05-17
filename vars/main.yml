@@ -1,0 +1,6 @@
+---
+# vars file for hadoop_tasktracker---
+# vars file for hadoop_jobtracker---
+# vars file for hadoop_namenode---
+Job_Tracker_Mapreduce_Port: "9002"
+

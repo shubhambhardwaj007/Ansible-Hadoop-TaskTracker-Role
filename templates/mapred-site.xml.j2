@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+{% for i in groups['hadoop_job_tracker'] %}
+<property>
+<name>mapred.job.tracker</name>
+<value>{{ i }}:{{ Job_Tracker_Mapreduce_Port }}</value>
+</property>
+{% endfor %}
+
+</configuration>
