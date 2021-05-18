@@ -1,13 +1,13 @@
 <a href="https://hadoop.apache.org/"><img src="images/Hadoop_logo.svg" width="100%" height="100%"></a>
 
-# Ansible-Hadoop-JobTrackerNode-Role
+# Ansible-Hadoop-TaskTrackerNode-Role
 
-An Ansible Role to Configure and setup [Hadoop](https://hadoop.apache.org/) Job Tracker Node.
+An Ansible Role to Configure and setup [Hadoop](https://hadoop.apache.org/) Task Tracker Node.
 
 Requirements
 ------------
-This role is dependent upon `shubhambhardwaj007.hadoop_software_installation` and `shubhambhardwaj007.hadoop_namenode`.
-For a full usage example with the `shubhambhardwaj007.hadoop_software_installation` role and `shubhambhardwaj007.hadoop_namenode` role, see the Example Playbook later in this README.
+This role is dependent upon `shubhambhardwaj007.hadoop_software_installation`.
+For a full usage example with the `shubhambhardwaj007.hadoop_software_installation` role, see the Example Playbook later in this README.
 
 Role Variables
 --------------
@@ -26,11 +26,10 @@ None
 Example Playbook
 ----------------
 ```
- - hosts: jobtracker_node
+ - hosts: tasktracker_node
    roles:
      - shubhambhardwaj007.ansible_hadoop_software_installation_role
-     - shubhambhardwaj007.hadoop_namenode
-     - shubhambhardwaj007.hadoop_jobtracker
+     - shubhambhardwaj007.hadoop_tasktracker
 ```
 License
 -------
@@ -39,4 +38,4 @@ GNU
 
 Author Information
 ------------------
-This role was created in 2021 by [Shubham Bhardwaj](https://galaxy.ansible.com/shubhambhardwaj007/hadoop_jobtracker)
+This role was created in 2021 by [Shubham Bhardwaj](https://galaxy.ansible.com/shubhambhardwaj007/hadoop_tasktracker)
