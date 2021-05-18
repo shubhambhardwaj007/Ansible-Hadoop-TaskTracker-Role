@@ -13,11 +13,9 @@ Role Variables
 --------------
 Available variables are listed below, along with default values (see vars/main.yml):
 ```
-Name_Node_Hdfs_Port: "9001"
 Job_Tracker_Mapreduce_Port: "9002"
-
 ```
-The `Name_Node_Hdfs_Port` should be similar to exposed port by Hadoop Master Node.The `Job_Tracker_Mapreduce_Port` is the exposed port for Task Tracker Node to connect.
+The `Job_Tracker_Mapreduce_Port` should be similar to exposed port by Hadoop Job Tracker Node.
 
 Dependencies
 ------------
