@@ -1,4 +1,3 @@
 ---
 # vars file for hadoop_tasktracker---
 Job_Tracker_Mapreduce_Port: "9002"
-
